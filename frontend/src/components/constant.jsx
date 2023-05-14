@@ -1,0 +1,148 @@
+import { prof, rema, ru, ryu, sade, bola, asa, ade, bird, build, chi, dark, food, fruit, part, place, valley, yemi } from '../assets';
+
+
+export const Users = [
+    {
+        id: 1,
+        profilePics: yemi,
+        userName: "Yemoray",
+    },
+    {
+        id: 2,
+        profilePics: prof,
+        userName: "Bingham",
+    },
+    {
+        id: 3,
+        profilePics: sade,
+        userName: "Singer",
+    },
+    {
+        id: 4,
+        profilePics: bola,
+        userName: "baller",
+    },
+    {
+        id: 5,
+        profilePics: rema,
+        userName: "remanolly",
+    },
+    {
+        id: 6,
+        profilePics: ru,
+        userName: "rumodara",
+    },
+    {
+        id: 7,
+        profilePics: ryu,
+        userName: "rukewewe",
+    },
+    {
+        id: 8,
+        profilePics: asa,
+        userName: "asika",
+    },
+    {
+        id: 9,
+        profilePics: ade,
+        userName: "Adelove",
+    },
+    {
+        id: 10,
+        profilePics: chi,
+        userName: "childluv",
+    },
+]
+
+export const Posts = [
+    {
+        id: 1,
+        desc: "We are destined to be great",
+        photo: build,
+        date: "15 mins ago",
+        userId: 1,
+        like: 22,
+        comment: 10,
+    },
+    {
+        id: 2,
+        desc: "The greatest things in life is success...",
+        photo: place,
+        date: "5 mins ago",
+        userId: 2,
+        like: 32,
+        comment: 9,
+    },
+    {
+        id: 3,
+        desc: "Be focused always and work hard...",
+        photo: bird,
+        date: "2 mins ago",
+        userId: 3,
+        like: 4,
+        comment: 5,
+    },
+    {
+        id: 4,
+        desc: "Ambition and hardworking are related to success...",
+        photo: valley,
+        date: "15 mins ago",
+        userId: 4,
+        like: 8,
+        comment: 12,
+    },
+    {
+        id: 5,
+        desc: "Tell your friends how you become great",
+        photo: part,
+        date: "5 mins ago",
+        userId: 5,
+        like: 9,
+        comment: 14,
+    },
+    {
+        id: 6,
+        desc: "Who is your guy, spyro",
+        photo: food,
+        date: "5 mins ago",
+        userId: 6,
+        like: 2,
+        comment: 20,
+    },
+    {
+        id: 7,
+        desc: "Lovely and beautiful is the most adoring",
+        photo: yemi,
+        date: "40 mins ago",
+        userId: 7,
+        like: 40,
+        comment: 50,
+    },
+    {
+        id: 8,
+        desc: "What you don't know about coastal areas",
+        photo: dark,
+        date: "1 mins ago",
+        userId: 8,
+        like: 4,
+        comment: 4,
+    },
+    {
+        id: 9,
+        desc: "What else do you want to learn to be great in life?",
+        photo: fruit,
+        date: "6 mins ago",
+        userId: 9,
+        like: 29,
+        comment: 4,
+    },
+    {
+        id: 10,
+        desc: "Any dream is realizable depends on your perseverance..",
+        photo: sade,
+        date: "8 mins ago",
+        userId: 10,
+        like: 6,
+        comment: 8,
+    },
+]

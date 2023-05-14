@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { FaUser, FaSearch, FaBell, FaComment } from 'react-icons/fa';
+import { FaUser, FaSearch, FaBell } from 'react-icons/fa';
+import { MdChat } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import profile  from '../assets/person/1.jpeg'
-import close from '../assets/close.svg'
-import menu from '../assets/menu.svg'
+import { close, menu, ade } from '../assets';
 
 
 const TopBar = () => {
@@ -11,7 +10,7 @@ const TopBar = () => {
 
     return (
      <>
-        <div className="bg-blue-500 md:p-2 w-full p-4">
+              <div className="bg-blue-500 md:p-2 w-full p-4 sticky top-[0px] z-10">
         <div className='container flex mx-auto justify-between'>
          <div className='logo'>
         <Link to="/" className=" flex font-bold hover:text-veryLightGray items-center text-2xl text-white">Damydavo</Link>               
@@ -30,22 +29,22 @@ const TopBar = () => {
 
               <div className='flex space-x-4 md:space-x-6 items-center text-white text-lg  z-10 mx-12'>
                    <div className='relative flex'>
-                   <FaUser />
+                                  <FaUser size="24" />
                    <span className="absolute flex rounded-[50%] bg-red-400 w-[18px] h-[18px] text-sm justify-center items-center top-[-11px] right-[-11px]" >2</span>
                    </div>
                    
-                   <div className='relative flex'>
-                   <FaComment />
+                             <div className='relative flex items-center'>
+                                  <MdChat size="24" />
                    <span className="absolute flex rounded-[50%] bg-red-400 w-[18px] h-[18px] text-sm justify-center items-center top-[-11px] right-[-11px]" >6</span>
                   </div>
 
                   <div className='relative flex'>
-                   <FaBell />
+                                  <FaBell size="24" />
                    <span className="absolute flex rounded-[50%] bg-red-400 w-[18px] h-[18px] text-sm justify-center items-center top-[-11px] right-[-11px]" >8</span>
                    </div>
 
                   <div className='profile_pics'>
-                  <img className="h-[32px] w-[32px] rounded-[50%] object-cover md:ml-12" src={profile} alt="profile_img" />
+                                  <img className="h-[32px] w-[32px] rounded-[50%] object-cover md:ml-12" src={ade} alt="profile_img" />
                   </div>
               </div>
         </div>

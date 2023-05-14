@@ -1,19 +1,25 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import TopBar from './components/topBar';
 import Home from './pages/home';
-import SideBar from './components/sideBar';
+import Profile from './pages/profile';
+import Register from './pages/register';
+import Login from './pages/login';
 
 const App = () => {
   return ( 
-    <Router>
-    <TopBar />
-    <div className='container'>
-      <SideBar/>
+    <>
+      <Router>
         <Routes>
-          <Route path ='/' element = {<Home />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+
         </Routes>
-    </div>
     </Router>
+
+
+    </>
+
    );
 }
  
