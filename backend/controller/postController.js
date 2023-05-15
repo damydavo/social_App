@@ -4,7 +4,7 @@ const User = require('../models/userModel')
 const Post = require('../models/postModel')
 
 //@desc get posts
-//@route  POST/api/post:id
+//@route  GET/api/post:id
 //@access  private
 
 const getPost = asyncHandler(async (req, res) => {
@@ -48,6 +48,11 @@ const createPost = asyncHandler(async (req, res) => {
     res.status(200).json(post)
 })
 
+
+//@desc update post
+//@route  PUT/api/post:id
+//@access  private
+
 const updatePost = asyncHandler(async (req, res) => {
     //Get user using the id in the JWT
     const user = await User.findById(req.user.id)
@@ -75,7 +80,22 @@ const updatePost = asyncHandler(async (req, res) => {
     res.status(200).json(updatedPost)
 })
 
-//@desc create tickets
+//@desc like/dislike post
+//@route  PUT/api/post:id
+//@access  private
+
+const likePost = asyncHandler(async (req, res) => {
+    const post = await Post.findById(req.params.id)
+    if (!post.likes.includes(req.user.id)) {
+        await post.updateOne({ $push: { likes: req.user.id } })
+        res.status(200).json('Post has been liked')
+    } else {
+        await post.updateOne({ $pull: { likes: req.user.id } })
+        res.status(200).json("post disliked")
+    }
+})
+
+//@desc Delete posts
 //@route  DELETE/api/post:id
 //@access  private
 
@@ -111,4 +131,5 @@ module.exports = {
     getPost,
     updatePost,
     deletePost,
+    likePost,
 }
