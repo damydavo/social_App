@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 
 const Register = () => {
     return (
-        <div className="block p-8 md:p-0 md:flex items-center justify-center my-18 md:my-44 space-x-0 md:space-x-12">
+        <div className="block p-8 md:p-0 md:flex items-center justify-center my-18 md:my-28 space-x-0 md:space-x-12">
             <div className="block space-y-3 w-80 md:w-96 my-8">
-                <h2 className="tracking-tight text-4xl text-blue-500 font-bold">Davosocial</h2>
+                <h2 className="tracking-tight text-4xl text-blue-500 font-bold">Damysocial</h2>
                 <p className="text-xl md:text-lg">Connect with friends and the world around you on Davosocial</p>
             </div>
 
