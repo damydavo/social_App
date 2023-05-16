@@ -95,6 +95,28 @@ const likePost = asyncHandler(async (req, res) => {
     }
 })
 
+//@desc get timeline post
+//@route  GET/api/timeline
+//@access  private
+
+const getTimeline = asyncHandler(async (req, res) => {
+    const currentUser = await User.findById(req.user.id)
+    const userPost = await Post.find({ user: currentUser._id })
+    const friendPost = await Promise.all(
+        currentUser.following.map(friend => {
+            return Post.find({ user: friend })
+        })
+    )
+    if (!userPost && currentUser) {
+        res.status(500)
+        throw new Error('cannot find posts')
+    }
+    res.status(200).json(
+        userPost.concat(...friendPost)
+    )
+})
+
+
 //@desc Delete posts
 //@route  DELETE/api/post:id
 //@access  private
@@ -132,4 +154,5 @@ module.exports = {
     updatePost,
     deletePost,
     likePost,
+    getTimeline,
 }
