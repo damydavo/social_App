@@ -23,7 +23,8 @@ import ru from "./ru.jpeg";
 import ryu from "./ryu.jpeg";
 import sade from "./sade.jpeg";
 import valley from "./valley.jpeg";
-import yemi from "./yem.jpeg"
+import yemi from "./yem.jpeg";
+import spinner from "./spinner.gif"
 
 
 export {
@@ -52,6 +53,7 @@ export {
     ryu,
     sade,
     valley,
-    yemi
+    yemi,
+    spinner
 }
 
