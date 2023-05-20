@@ -3,11 +3,25 @@ import { FaUser, FaSearch, FaBell } from 'react-icons/fa';
 import { MdChat } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { close, menu, ade } from '../assets';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { logout, reset } from '../features/auth/authSlice';
 
 const TopBar = () => {
      const [toggle, setToggle] = useState(false)
 
+     const dispatch = useDispatch()
+     const navigate = useNavigate()
+
+     const { user } = useSelector((state) => state.auth)
+
+     const onLogout = () => {
+          if (user) {
+               dispatch(logout())
+               dispatch(reset())
+               navigate('/login')
+          }
+     }
     return (
      <>
               <div className="bg-blue-500 md:p-2 w-full p-4 sticky top-[0px] z-10">
@@ -24,8 +38,8 @@ const TopBar = () => {
            </div>
               <div className='hidden md:flex text-white space-x-4 items-center font-semibold'>
                    <h2>Homepage</h2>
-                   <h2>Timeline</h2>
-              </div>
+                             <button onClick={onLogout} type="button" className='flex px-2 py-1 rounded-md bg-slate-500 justify-center items-center'>logout</button>
+                        </div>
 
               <div className='flex space-x-4 md:space-x-6 items-center text-white text-lg  z-10 mx-12'>
                    <div className='relative flex'>

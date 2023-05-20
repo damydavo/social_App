@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 export const useAuthStatus = () => {
     const [loggedIn, setLoggedIn] = useState(false)
-    const [checking, setChecking] = useState(true)
+    const [checkingStatus, setCheckingStatus] = useState(true)
 
     const { user } = useSelector((state) => state.auth)
 
@@ -13,8 +13,8 @@ export const useAuthStatus = () => {
         } else {
             setLoggedIn(false)
         }
-        setChecking(false)
+        setCheckingStatus(false)
     }, [user])
 
-    return { loggedIn, checking }
+    return { loggedIn, checkingStatus }
 }

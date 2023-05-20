@@ -28,12 +28,15 @@ const Login = () => {
         if (isError) {
             toast.error(message)
         }
+
+        //redirect if it's successful
         if (isSuccess) {
             navigate('/')
         }
 
         dispatch(reset())
-    }, [isError, isLoading, message, navigate, dispatch, isSuccess])
+
+    }, [isLoading, isError, isSuccess, message, dispatch, navigate])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -45,7 +48,7 @@ const Login = () => {
     }
 
     if (isLoading) return (
-        <div className='flex items-center justify-center mx-auto container mt-28'><img className='w-10 h-10' src={spinner} alt="" /></div>
+        <div className='flex items-center justify-center mx-auto container mt-28'><img className='w-16 h-16' src={spinner} alt="spinner" /></div>
 
     )
 
